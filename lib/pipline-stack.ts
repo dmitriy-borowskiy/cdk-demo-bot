@@ -45,8 +45,7 @@ export class PipelineStack extends Stack {
           "dmitriy-borowskiy/cdk-demo-bot",
           "main",
           {
-            connectionArn: `arn:aws:codestar-connections:us-west-2:276097718844:connection/be0a167b-3774-454c-98ec-f5a712019903
-            `,
+            connectionArn: `arn:aws:codestar-connections:us-west-2:276097718844:connection/be0a167b-3774-454c-98ec-f5a712019903`,
             triggerOnPush: true,
           }
         ),

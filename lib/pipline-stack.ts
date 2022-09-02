@@ -42,10 +42,11 @@ export class PipelineStack extends Stack {
     const pipeline = new CodePipeline(this, "CdkDemoBotPipeline", {
       synth: new CodeBuildStepWithPrimarySource("SynthStep", {
         input: CodePipelineSourceWithPrimarySource.connection(
-          "DanilAgafonov/cdk-demo-bot",
+          "dmitriy-borowskiy/cdk-demo-bot",
           "main",
           {
-            connectionArn: `arn:aws:codestar-connections:us-west-2:276097718844:connection/5d546590-7558-4b52-a31a-37c259886223`,
+            connectionArn: `arn:aws:codestar-connections:us-west-2:276097718844:connection/be0a167b-3774-454c-98ec-f5a712019903
+            `,
             triggerOnPush: true,
           }
         ),
@@ -84,8 +85,7 @@ class CdkDemoBotDeployStage extends Stage {
 
     new CdkDemoBotStack(this, "CdkDemoBotStack", {
       stackName: `${props.scope ? `${props.scope}-` : ''}-${id}-cdk-demo-bot`,
-      scope: props.scope,
+      scope: props.scope || '',
     });
   }
 }
-
